@@ -1,0 +1,130 @@
+.cabecalho__menu-hamburguer{
+   background-image: url("../assets/Menu.svg");
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-position: center;
+}
+.cabecalho{
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.container{
+    display: flex;
+    align-items: center;
+}
+.container__imagem{
+    padding: 1em;
+}
+.lista-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+}
+.container__botao:checked~.lista-menu{
+    display: block;
+}
+.lista-menu__titulo,
+.lista-menu__item {
+    padding: 1em;
+    background-color: var(--branco);
+}
+.lista-menu__titulo{
+    color: var(--laranja); 
+    font-weight: 700;
+}
+.lista-menu__link{
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase; 
+}
+.container__botao {
+    display: none;
+}
+ .container__titulo{
+        display: none;
+    }
+.opcoes{
+    display: none;
+}
+  .container__texto{
+    display: none;
+   }
+    
+
+@media screen and (min-width: 1024px) {
+    .container__titulo, .container__titulo--negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+       
+    }
+    .container__titulo{
+        font-weight: 400;
+        display: block;
+        margin: 0 0.5em;
+        align-items: center;
+    }
+    .container__titulo--negrito{
+        font-weight: 700;
+    }
+    .opcoes{
+        display: flex;
+    }
+    .opcoes__item{
+        padding: 0 1em;
+        font-size: 16px;
+    }
+    .opcoes__link{
+        text-decoration: none;
+        color: var(--preto);
+    }
+    .container__imagem-transparente{
+    display: none;
+    }
+    .cabecalho__menu-hamburguer{
+        display: none;
+    }
+    .opcoes__botao:checked ~ .lista-menu {
+        display: block;
+        width: auto;
+    }
+    .opcoes__botao {
+        display: none;
+    }
+ 
+}
+@media screen and (min-width: 1728px) {
+   .container__link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--preto);
+    font-size: 20px;
+   }
+    .container__texto{
+    display: block;
+    }
+    .cabecalho{
+        padding: 0 2em;
+    }
+    .opcoes{
+        margin-right: auto;
+    }
+}
+
+
+
+/* Usar o max-width quando for desktop first: @media (min-width ou max-width = tamanho da tela) { }
+ O max é ideal para quando temos um layout Desktop pronto e queremos adaptá-lo para dispositivos menores - 
+ vamos então definindo novas regras que se aplicam só aos dispositivos de no máximo 
+certo tamanho. Já o min pode ser útil quando criamos um site só mobile ou começamos pelo mobile - nesse caso, é mais fácil ter um layout
+base e ir customizando para dispositivos maiores, com no mínimo certo tamanho.
+screen é um media type
+https://www.alura.com.br/artigos/flexibilidade-em-paginas-para-dispositivos-moveis-com-media-queries*/ 
